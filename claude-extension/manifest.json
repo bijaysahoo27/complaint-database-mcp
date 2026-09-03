@@ -2,7 +2,7 @@
   "manifest_version": "0.3",
   "name": "complaint-database",
   "display_name": "Complaint Database",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Read complaint records and update their status in the local PostgreSQL complaint database.",
   "author": {
     "name": "Local"

@@ -1,11 +1,16 @@
-# Complaint Database MCP server
+# Complaint Database MCP chatbot
 
-This stdio MCP server connects to PostgreSQL and exposes four tools:
+This project includes a Streamlit chatbot powered by OpenAI and a LangChain
+agent. The agent connects to PostgreSQL only through the local stdio MCP server.
+
+The MCP server exposes six tools:
 
 - `get_complaint_by_id`
 - `search_complaints`
 - `list_recent_complaints`
 - `update_complaint_status`
+- `get_customer_complaint_history`
+- `assign_complaint`
 
 The default database is `Complaint Database`, and the default relation is
 `public.complaints`. Override the schema or table with `POSTGRES_SCHEMA` and
@@ -20,9 +25,19 @@ complete latest row for each complaint ID.
 
 ```powershell
 Copy-Item .env.example .env
-# Edit .env and provide the actual credentials.
+# Edit .env and provide PostgreSQL credentials and OPENAI_API_KEY.
 uv sync
 ```
+
+Start the chatbot:
+
+```powershell
+uv run streamlit run app.py
+```
+
+Open the local URL printed by Streamlit (normally `http://localhost:8501`).
+The OpenAI model decides when to call the MCP tools; the MCP server performs the actual
+PostgreSQL reads and updates.
 
 Load the environment and run the server:
 

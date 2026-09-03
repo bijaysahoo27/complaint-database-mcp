@@ -1,12 +1,17 @@
 [project]
 name = "my-project"
-version = "0.1.4"
-description = "Read-only MCP server for the PostgreSQL Complaint Database"
+version = "0.1.5"
+description = "Claude chatbot and MCP server for the PostgreSQL Complaint Database"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "langchain>=1.0.0",
+    "langchain-mcp-adapters>=0.3.0",
+    "langchain-openai>=1.0.0",
     "mcp[cli]>=1.12.0",
+    "python-dotenv>=1.0.0",
     "psycopg[binary]>=3.2.0",
+    "streamlit>=1.49.0",
 ]
 
 [project.scripts]
