@@ -1,0 +1,48 @@
+{
+  "manifest_version": "0.3",
+  "name": "complaint-database",
+  "display_name": "Complaint Database",
+  "version": "0.1.4",
+  "description": "Read complaint records and update their status in the local PostgreSQL complaint database.",
+  "author": {
+    "name": "Local"
+  },
+  "server": {
+    "type": "python",
+    "entry_point": "server/launcher.py",
+    "mcp_config": {
+      "command": "C:\\AI\\Ai_project\\My_project\\.venv\\Scripts\\python.exe",
+      "args": ["-m", "my_project"],
+      "env": {}
+    }
+  },
+  "tools": [
+    {
+      "name": "get_complaint_by_id",
+      "description": "Get the latest record for one complaint ID."
+    },
+    {
+      "name": "search_complaints",
+      "description": "Search current complaint records using status, severity, owner, region, customer, service, category, and channel filters."
+    },
+    {
+      "name": "list_recent_complaints",
+      "description": "List the newest current complaint records."
+    },
+    {
+      "name": "get_customer_complaint_history",
+      "description": "List recent complaint records for a customer."
+    },
+    {
+      "name": "update_complaint_status",
+      "description": "Update the status of a complaint."
+    },
+    {
+      "name": "assign_complaint",
+      "description": "Assign a complaint to a support owner."
+    }
+  ],
+  "compatibility": {
+    "platforms": ["win32"]
+  }
+}

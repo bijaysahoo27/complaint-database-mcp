@@ -1,0 +1,17 @@
+[project]
+name = "my-project"
+version = "0.1.4"
+description = "Read-only MCP server for the PostgreSQL Complaint Database"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "mcp[cli]>=1.12.0",
+    "psycopg[binary]>=3.2.0",
+]
+
+[project.scripts]
+complaint-db-mcp = "my_project:main"
+
+[build-system]
+requires = ["uv_build>=0.12.7,<0.13.0"]
+build-backend = "uv_build"
